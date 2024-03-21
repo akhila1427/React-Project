@@ -40,7 +40,7 @@ export default function Footer() {
                 spacing={4}
                 justify={{ base: 'center', md: 'space-between' }}
                 align={{ base: 'center', md: 'center' }}>
-                <Image style={{ height: '60px' , width:'60px'}} src={logo2} alt="logo" />
+                {/* <Image style={{ height: '60px' , width:'60px'}} src={logo2} alt="logo" /> */}
                 <Text>© 2024 Resume Builder, All rights reserved</Text>
                 <Stack direction={'row'} spacing={6}>
                     <SocialButton label={'Github'} href={'https://github.com/akhila1427?tab=repositories'}>

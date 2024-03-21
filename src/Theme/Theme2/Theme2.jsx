@@ -1,9 +1,12 @@
-import React, { useContext } from 'react'
-import { Box, Text, Image, Heading, Badge } from '@chakra-ui/react';
+import React, { useContext,useState } from 'react'
+import { Box, Text, Image, Heading, Badge,Textarea } from '@chakra-ui/react';
 import './theme2.css'
 import ResumeContext from '../../Context/ResumeContext';
+const defaultSummary =
+  "I am a dedicated and reliable professional with a strong work ethic. Known for my honesty. consistently strive for excellence in all tasks I undertake. With a proactive approach to time management.";
 
 const Theme2 = (props) => {
+    const [summarya, setSummarya] = useState(defaultSummary)
     const { componentRef, themeData } = props;
     const { name, address, phone, email, profile, profileImage, summary, skill } = themeData.personalData;
 
@@ -159,6 +162,18 @@ const Theme2 = (props) => {
 
                     </section>
                 </section>
+                <div style={{ 
+    display: 'block', width: 800
+}}> 
+                                    <Heading fontSize='2xl' className='mt-4'>Description</Heading>
+
+    <Textarea 
+        value={summarya}
+        onChange={(e) => setSummarya(e.target.value)} 
+        placeholder="Enter your summary of poem"
+        readOnly 
+    /> <br></br> 
+</div>
             </Box>
         </Box>
     )

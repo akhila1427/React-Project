@@ -7,7 +7,7 @@ import Theme2 from '../../Theme/Theme2/Theme2';
 import Theme3 from '../../Theme/Theme3/Theme3';
 import ErrorPage from '../Error/ErrorPage';
 
-const Home = () => {
+export const Home = () => {
     const { currentTheme, showComponent, themeData, componentRef } = useContext(ResumeContext);
 
     return (

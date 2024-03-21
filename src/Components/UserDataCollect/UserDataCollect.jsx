@@ -3,12 +3,13 @@ import './userCollectData.css'
 import { IoMdCloudUpload } from 'react-icons/io'
 import { FormControl, Input, Heading, Textarea, Button, Switch } from '@chakra-ui/react'
 import ResumeContext from '../../Context/ResumeContext'
+
+
 const UserDataCollect = () => {
+    const [summary, setSummary] = useState("I am a dedicated and reliable professional with a strong work ethic. Known for my honesty.consistently strive for excellence in all tasks I undertake. With a proactive approach to time management");
 
 
     const { themeData, checkAward, setCheckAward, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork } = useContext(ResumeContext)
-
-
     const [projectCount, setProjectCount] = useState(0)
     const [educationCount, setEducationCount] = useState(0)
     const [workCount, setWorkCount] = useState(0)
@@ -20,7 +21,7 @@ const UserDataCollect = () => {
     const [workData, setWorkData] = useState({ 'workTitles': { wTitle1: "Work Title" }, 'workDesc': { wDescription1: "Work Description are Shown here , with Bullet Points" } })
     const [personalData, setPersonalData] = useState({ profileImage: 'https://www.w3schools.com/howto/img_avatar.png', name: "Your Name", summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing eli', profile: "Work Profile", address: "Address Line", phone: "Phone Number", email: "Email Address", skill: 'Your, Skills, are, shown, here', })
     const [awardData, setAwardData] = useState({ awards: 'Your Awards are shown here' })
-    // To Add Personal Data to the State
+    
     const handleChangePersonal = (e) => {
         const { name, value } = e.target
         setPersonalData({ ...personalData, [name]: value })
@@ -28,7 +29,9 @@ const UserDataCollect = () => {
             setPersonalData({ ...personalData, profileImage: URL.createObjectURL(e.target.files[0]) })
         }
     }
-    // To Add Project Data to the State
+
+    
+
     const handleChangeProject = (e) => {
         const { name, value, id } = e.target
         let tempProjectData = projectData
@@ -61,7 +64,7 @@ const UserDataCollect = () => {
         setProjectCount(i)
     }
 
-    // To Add Education Data to the State
+    
     const handleChangeEducation = (e) => {
         const { name, value, id } = e.target
         let tempEducationData = educationData
@@ -92,7 +95,6 @@ const UserDataCollect = () => {
         setEducationCount(i)
     }
 
-    // To Add Work Data to the State
     const handleChangeWork = (e) => {
         const { name, value, id } = e.target
         let tempWorkData = workData
@@ -103,6 +105,9 @@ const UserDataCollect = () => {
         }
         setWorkData({ ...workData }, tempWorkData)
     }
+
+
+    
     const handleWorkClick = (e) => {
         e.preventDefault();
         let i = workCount
@@ -123,7 +128,7 @@ const UserDataCollect = () => {
         setWorkCount(i)
     }
 
-    // To Add Award & Achievement Data to the State
+   
     const handleChangeAwards = (e) => {
         const { name, value } = e.target
         setAwardData({ ...awardData, [name]: value })
@@ -136,7 +141,6 @@ const UserDataCollect = () => {
     return (
         <>
             <div id="form-collect">
-                {/* Personal Details Area  */}
                 <div id="form-personal" className='mb-2'>
                     <Heading as='h4' size='md' className='mb-2'>
                         Personal Details
@@ -227,6 +231,8 @@ const UserDataCollect = () => {
                     }
                 </div>
 
+                
+
                 {/* Awards & Achievement  */}
                 <div id="form-personal" className='mb-2'>
                     <div className='d-flex align-items-center justify-content-between'>
@@ -235,13 +241,13 @@ const UserDataCollect = () => {
                         </Heading>
                         <Switch defaultChecked={true} onChange={() => (setCheckAward(!checkAward))} colorScheme='teal' />
                     </div>
-                    <hr />
-                    <FormControl isRequired className='my-2'>
-                        <Textarea name='awards' disabled={checkAward} onChange={handleChangeAwards} placeholder='Use comma to separate Achievement' />
-                    </FormControl>
+                    
+                   
                 </div>
+                
 
             </div>
+            
         </>
     )
 }

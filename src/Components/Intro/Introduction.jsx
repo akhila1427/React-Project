@@ -32,7 +32,7 @@ export default function Introduction() {
                 <meta property="og:url" content="https://quick-resume.netlify.app/about" />
                 <meta property="og:type" content="website" />
             </Helmet>
-            <div style={{ backgroundImage: "url('https://img.freepik.com/premium-vector/human-resources-management-concept_169241-875.jpg?w=740')", backgroundSize: 'cover', minHeight: '100vh', maxWidth:"100vw" }}/>
+            {/* <div style={{ backgroundImage: "url('https://img.freepik.com/premium-vector/human-resources-management-concept_169241-875.jpg?w=740')", backgroundSize: 'cover', minHeight: '100vh', maxWidth:"100vw" }}/> */}
 
             <Container my={{ base: 1.5, md: 16 }} justifyContent={'space-between'} flexDirection={{ base: 'column', md: 'row', sm: 'column' }} display={'flex'} alignItems={'center'} maxW={'7xl'}  >
                 

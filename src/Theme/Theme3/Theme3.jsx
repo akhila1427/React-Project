@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext,useState } from "react";
+import { Textarea } from '@chakra-ui/react';
 import {
   Box,
   Text,
@@ -8,12 +9,14 @@ import {
 } from "@chakra-ui/react";
 import "./theme3.css";
 import ResumeContext from "../../Context/ResumeContext";
+const defaultSummary =
+  "I am a dedicated and reliable professional with a strong work ethic. Known for my honesty. consistently strive for excellence in all tasks I undertake. With a proactive approach to time management.";
 
 const Theme3 = (props) => {
   const { componentRef, themeData } = props;
   const { name, address, phone, email, profile, summary, skill } =
     themeData.personalData;
-
+    const [summarya, setSummarya] = useState(defaultSummary)
   const { checkProj, checkWork, checkAward } = useContext(ResumeContext);
   const { projectTitles, projectDesc } = themeData.projectData;
   const { educationTitles, educationDesc } = themeData.educationData;
@@ -198,7 +201,8 @@ const Theme3 = (props) => {
                 </Grid>
               </Box>
             </Box>
-{!checkAward && <>
+            <hr/>
+{/* {!checkAward && <>
             <div className="w-100 border m-auto"></div>
 
 <Box display={"flex"} className="w-full my-4">
@@ -234,9 +238,22 @@ const Theme3 = (props) => {
     </Grid>
   </Box>
 </Box>
-</>}
+</>} */}
           </section>
         </section>
+        <div style={{ 
+    display: 'block', width: 800, paddingLeft: 0
+}}> 
+    <Heading _dark={{ color: 'gray.100' }} bg={'white'} as='h3' size='md' px={2} py={2}>
+        Description
+    </Heading>
+    <Textarea 
+        value={summarya}
+        onChange={(e) => setSummarya(e.target.value)} 
+        placeholder="Enter your summary of poem"
+        readOnly 
+    /> <br></br> 
+</div>
       </Box>
     </Box>
   );

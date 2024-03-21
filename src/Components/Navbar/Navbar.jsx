@@ -10,7 +10,7 @@ export default function Navbar() {
 
     return (
         <>
-            <Box id='navbar' bg={useColorModeValue('orange.200', 'black.600')} px={4}>
+            <Box id='navbar' bg={useColorModeValue('orange.200', 'blue.600')} px={4}>
                 <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
                     <ReachLink to='/'>
                         <Box><img style={{ height: '44px' }} className='logo' src={logo} alt="logo" /></Box>
